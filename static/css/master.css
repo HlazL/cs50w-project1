@@ -1,0 +1,57 @@
+.error{
+  color: blue;
+  text-align: center;
+
+}
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: -1;
+    border-radius: 10px;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+nav {
+    height: 3.5rem;
+}
+
+#main {
+    min-height: calc(100vh - 7rem);
+}
+
+footer, #footer-spacer {
+    height: 3.5rem;
+}
+
+.navbar {
+    transition: top 0.5s ease;
+}
+
+.navbar-hide {
+    top: -3.5rem;
+}

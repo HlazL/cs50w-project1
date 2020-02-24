@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="{{ url_for ('static', filename='css/master.css') }}"> -->
+    <title>BReviewP2P</title>
+  </head>
+
+  <style media="screen">
+
+  .bord{
+    border: none;
+    display: grid;
+}
+
+  .error{
+    color: blue;
+    text-align: center;
+
+  }
+  form:before {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      background-color: #FAFAFA;
+      z-index: -1;
+      border-radius: 10px;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: white;
+  }
+
+  .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+
+  nav {
+      height: 4.8rem;
+  }
+
+  #main {
+      min-height: calc(100vh - 7rem);
+  }
+
+
+
+</style>
+  <body>
+    <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" style="color:#5B2C6F; font-size:200%;">
+
+    <img src="{{ url_for('static', filename='images/book.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
+      BReviewP2P
+  </a>
+    {% if session.user_id %}
+    <ul class="navbar-nav ml-auto nav navbar-nav pull-right  list-group-horizontal" >
+                      <li class="nav-item list-group-item"  ><a class="nav-link" href="/">{{session.user_name}}</a></li>
+                      <li class="nav-item list-group-item"><a class="nav-link" href="/logout">Log Out</a></li>
+    </ul>
+    {%else%}
+  <ul class="navbar-nav ml-auto nav navbar-nav pull-right  list-group-horizontal" >
+                    <li class="nav-item list-group-item"  ><a class="nav-link" href="/register">Register</a></li>
+                    <li class="nav-item list-group-item"><a class="nav-link" href="/login">Login</a></li>
+  </ul>
+{% endif %}
+</nav>
+    <h1>{% block heading %}{% endblock %}</h1>
+
+    {% block body %}
+    {% endblock %}
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

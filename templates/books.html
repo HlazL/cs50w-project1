@@ -1,0 +1,25 @@
+{%extends "layout.html" %}
+
+{% block heading %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container py-3 py-md-5">
+  <div class="row row-cols-3 pb-0 pb-md-4">
+{% for book in books%}
+  <div class="col-12 col-md-4 pb-4 pb-md-0 d-flex align-items-stretch mb-2">
+    <div class="card" style="width: 27rem;" >
+  <img src="http://covers.openlibrary.org/b/isbn/{{ book[0] }}.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ book[1] }}</h5>
+    <div class="row justify-content-center">
+    <a href="/book/{{book[0]}}" class="btn btn-primary">More</a>
+    </div>
+    </div>
+    </div>
+</div>
+    {% endfor %}
+  </div>
+</div>
+    {% endblock %}
